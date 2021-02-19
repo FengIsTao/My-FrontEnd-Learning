@@ -7,6 +7,10 @@ import Axios from 'axios'
 
 Vue.config.productionTip = false;
 
+//引入自己书写的全局css样式
+import '../static/css/global.css'
+
+
 //引入Mint-UI
 import MintUI from "mint-ui";
 import "mint-ui/lib/style.css";

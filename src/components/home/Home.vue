@@ -5,13 +5,14 @@
         <img :src="item.img" alt="" />
       </mt-swipe-item>
     </mt-swipe>
+    <!-- 九宫格 -->
     <div class="list">
       <ul>
-        <li v-for="(grid,index) in grids" :key="grid.id">
-          <a href="javascript.vois(0);">
+        <li v-for="(grid, index) in grids" :key="grid.id">
+          <router-link :to="grid.router">
             <img :src="grid.src" alt="" />
-          </a>
-          <p></p>
+          </router-link>
+          <p>{{grid.title}}</p>
         </li>
       </ul>
     </div>
@@ -19,13 +20,19 @@
 </template>
 
 <script>
+import src1 from "@/assets/logo.png";
+import src2 from "@/assets/logo.png";
+import src3 from "@/assets/logo.png";
+import src4 from "@/assets/logo.png";
+import src5 from "@/assets/logo.png";
+import src6 from "@/assets/logo.png";
 let grids = [
-  { id: 1, src: "../../assets/logo.png", title: "新闻资讯" },
-  { id: 1, src: "../../assets/logo.png", title: "新闻资讯" },
-  { id: 1, src: "../../assets/logo.png", title: "新闻资讯" },
-  { id: 1, src: "../../assets/logo.png", title: "新闻资讯" },
-  { id: 1, src: "../../assets/logo.png", title: "新闻资讯" },
-  { id: 1, src: "../../assets/logo.png", title: "新闻资讯" },
+  { id: 1, src: src1, title: "新闻资讯",router:{name:'news.list'} },
+  { id: 2, src: src2, title: "新闻资讯" ,router:{name:'news.list'}},
+  { id: 3, src: src3, title: "新闻资讯",router:{name:'news.list'} },
+  { id: 4, src: src4, title: "新闻资讯",router:{name:'news.list'} },
+  { id: 5, src: src5, title: "新闻资讯",router:{name:'news.list'} },
+  { id: 6, src: src6, title: "新闻资讯",router:{name:'news.list'} },
 ];
 export default {
   name: "Home",
@@ -49,5 +56,29 @@ export default {
 };
 </script>
 
-<style>
+<style lang="css" scoped>
+.list{
+  width:100%;
+  height:100%
+}
+.list ul{
+  display:flex;
+  flex-wrap:wrap
+}
+.list ul li{
+  width:33%;
+  height:100%;
+  text-align:center;
+  font-size:14px;
+  margin-top:15px
+}
+.list ul li a{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  margin:0 auto
+}
+.list ul li img{
+  width:50px
+}
 </style>

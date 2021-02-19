@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <mt-header title="信息管理系统">
+    <mt-header fixed title="信息管理系统">
       <router-link to="/" slot="left">
         <mt-button icon="back">返回</mt-button>
       </router-link>
@@ -8,8 +8,8 @@
     </mt-header>
     <router-view />
     <!-- 顶部栏 -->
-    <mt-tabbar v-model="selected">
-      <mt-tab-item id="Home">
+    <mt-tabbar v-model="selected" :fixed="fixed">
+      <mt-tab-item id="home">
         <img slot="icon" src="../src/assets/logo.png" />
         首页
       </mt-tab-item>
@@ -17,7 +17,7 @@
         <img slot="icon" src="../src/assets/logo.png" />
         会员
       </mt-tab-item>
-      <mt-tab-item id="shopcart">
+      <mt-tab-item id="cart">
         <img slot="icon" src="../src/assets/logo.png" />
         购物车
       </mt-tab-item>
@@ -35,6 +35,7 @@ export default {
   data() {
     return {
       selected: "",
+      fixed:true
     };
   },
   watch: {
@@ -47,9 +48,6 @@ export default {
 };
 </script>
 
-<style>
-* {
-  padding: 0;
-  margin: 0;
-}
+<style scoped>
+
 </style>
