@@ -17,7 +17,7 @@ import "mint-ui/lib/style.css";
 Vue.use(MintUI);
 
 //配置公共的URL
-Axios.defaults.baseURL='http://www.sinya.online/api/'
+Axios.defaults.baseURL='http://127.0.0.1:8899/api/'
 //配置axios
 Vue.prototype.$axios=Axios
 
