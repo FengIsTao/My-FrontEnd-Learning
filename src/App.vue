@@ -7,8 +7,15 @@
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
     <router-view />
-    <!-- 顶部栏 -->
-    <mt-tabbar v-model="selected" :fixed="fixed">
+    <div class="tabBar">
+      <ul>
+        <li>
+          
+        </li>
+      </ul>
+    </div>
+    <!-- 底部栏 -->
+    <!-- <mt-tabbar v-model="selected" :fixed="fixed">
       <mt-tab-item id="home">
         <img slot="icon" src="../src/assets/logo.png" />
         首页
@@ -25,7 +32,7 @@
         <img slot="icon" src="../src/assets/logo.png" />
         查找
       </mt-tab-item>
-    </mt-tabbar>
+    </mt-tabbar> -->
   </div>
 </template>
 
@@ -42,7 +49,7 @@ export default {
     selected: function (newV, oldV) {
       console.log(newV, oldV);
       console.log(this.selected);
-      this.$router.push({ name: "this.selected" });
+      this.$router.push({ name: this.selected });
     },
   },
 };
