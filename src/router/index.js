@@ -6,6 +6,7 @@ import Search from '../components/search/Search.vue'
 import Cart from '../components/cart/Cart.vue'
 import NewsList from '../components/news/NewsList.vue'
 import NewsDetail from '../components/news/NewsDetail.vue'
+import PhotoList from '../components/Photo/PhotoList.vue'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/news/detail',
       name: 'detail',
       component: NewsDetail
+    },
+    {
+      path: '/photos/list/:categoryId',
+      name: 'photo.list',
+      component: PhotoList
     },
   ],
   linkActiveClass:'link-active',
