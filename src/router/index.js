@@ -5,6 +5,7 @@ import Vip from '../components/vip/Vip.vue'
 import Search from '../components/search/Search.vue'
 import Cart from '../components/cart/Cart.vue'
 import NewsList from '../components/news/NewsList.vue'
+import NewsDetail from '../components/news/NewsDetail.vue'
 
 Vue.use(Router)
 
@@ -39,5 +40,11 @@ export default new Router({
       name: 'news.list',
       component: NewsList
     },
-  ]
+    {
+      path: '/news/detail',
+      name: 'detail',
+      component: NewsDetail
+    },
+  ],
+  linkActiveClass:'link-active',
 })

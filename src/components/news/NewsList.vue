@@ -1,9 +1,10 @@
 <template>
   <div class="news">
+    <NavBar title="新闻列表" />
     <div class="newList">
       <ul>
         <li v-for="(news, index) in newsList" :key="news.id">
-          <a href="#">
+          <router-link :to="{name:'detail',query:{id:news.id}}">
             <div class="new_img">
               <img :src="news.img_url" alt="" />
             </div>
@@ -13,11 +14,11 @@
                 <p class="summary">{{ news.zhaiyao }}</p>
                 <p>
                   <span class="praise">点赞数:{{ news.click }}</span>
-                  <span class="time">发表时间:{{ news.add_time }}</span>
+                  <span class="time">发表时间:{{ news.add_time | converTime('YYYY-MM-DD') }}</span>
                 </p>
               </div>
             </div>
-          </a>
+          </router-link>
         </li>
       </ul>
     </div>
